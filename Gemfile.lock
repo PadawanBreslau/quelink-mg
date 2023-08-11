@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quelink-3xx (0.0.1)
+    quelink-mg (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -31,7 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   pry (~> 0.13)
-  quelink-3xx!
+  quelink-mg!
   rspec (~> 3.9)
 
 BUNDLED WITH
