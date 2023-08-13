@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-require_relative '../lib/quelink-mg'
+require_relative '../lib/quelink_mg'
+
+QuelinkMg.configure do |config|
+  config.time_zone = QuelinkMg::Configuration::DEFAULT_ZONE
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
