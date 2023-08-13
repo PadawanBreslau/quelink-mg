@@ -15,3 +15,12 @@ Alternatively, you can install the gem with bundler:
 
 After doing bundle install, you should have the gem installed in your bundle.
 
+## Development
+
+Building gem locally (you can change file name, ofc):
+gem build *.gemspec -o pkg/quelink-mg.gem
+
+Installing:
+gem install pkg/quelink-mg.gem
+
+
