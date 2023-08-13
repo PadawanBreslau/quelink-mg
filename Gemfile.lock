@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quelink-mg (0.0.1)
+    quelink-mg (0.1.0)
       activesupport (~> 7.0)
 
 GEM
@@ -79,7 +79,7 @@ DEPENDENCIES
   quelink-mg!
   rspec (~> 3.9)
   rubocop (~> 1.0)
-  rubocop-rspec
+  rubocop-rspec (~> 2.2)
 
 BUNDLED WITH
    2.4.7
