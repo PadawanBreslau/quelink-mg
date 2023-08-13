@@ -10,6 +10,8 @@ require File.expand_path('quelink-mg/at/base.rb', __dir__)
 require File.expand_path('quelink-mg/at/gtbsi.rb', __dir__)
 require File.expand_path('quelink-mg/resp/base.rb', __dir__)
 require File.expand_path('quelink-mg/resp/gtfri.rb', __dir__)
+require File.expand_path('quelink-mg/ack/base.rb', __dir__)
+require File.expand_path('quelink-mg/ack/gtbsi.rb', __dir__)
 require File.expand_path('quelink-mg/configuration.rb', __dir__)
 
 module QuelinkMg

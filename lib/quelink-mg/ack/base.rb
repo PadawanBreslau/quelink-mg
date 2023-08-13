@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module QuelinkMg
-  module Resp
+  module Ack
     class Base
       QUELINK_DATE_FORMAT = '%Y%m%d%H%M%S'
 
