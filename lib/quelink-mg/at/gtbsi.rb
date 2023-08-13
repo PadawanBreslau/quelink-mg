@@ -29,15 +29,8 @@ module At
         apn_authentication_methods: (0..3),
         manual_netreg: (0..5)
       }
-
-      acceptable_values.each do |k,v|
-        next if v.include?(@params.fetch(k, nil))
-        raise_error(k)
-      end
-    end
-
-    def raise_error(type)
-      raise InvalidATGTBSIException, "Wrong #{type}: #{@params}"
+      
+      verify_params(acceptable_values, InvalidATGTBSIException)
     end
   end
 end
