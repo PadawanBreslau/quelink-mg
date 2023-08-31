@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class InvalidATGTBSIException < StandardError; end
+class InvalidATGTException < StandardError; end
 
 module QuelinkMg
   module At
