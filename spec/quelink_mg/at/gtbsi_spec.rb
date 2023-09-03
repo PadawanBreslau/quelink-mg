@@ -19,7 +19,7 @@ RSpec.describe QuelinkMg::At::Gtbsi do
   end
 
   it 'raises error on missing params' do
-    expect { described_class.new(params: {}).message }.to raise_error(InvalidATGTException)
+    expect { described_class.new(params: {}).message }.to raise_error(InvalidATGTBSIException)
   end
 
   it 'raises error on improper params' do
@@ -34,6 +34,6 @@ RSpec.describe QuelinkMg::At::Gtbsi do
         serial_number: 'ABFF'
       }
 
-    expect { described_class.new(params:).message }.to raise_error(InvalidATGTException)
+    expect { described_class.new(params:).message }.to raise_error(InvalidATGTBSIException)
   end
 end

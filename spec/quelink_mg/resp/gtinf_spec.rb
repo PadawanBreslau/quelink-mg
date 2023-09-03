@@ -9,7 +9,7 @@ RSpec.describe QuelinkMg::Resp::Gtinf do
     parsed_response = described_class.new(response:).hash
     expect(parsed_response).not_to eq({})
     expect(parsed_response['state']).to eq 42
-    expect(parsed_response['iccid']).to eq 89860117851087152093
+    expect(parsed_response['iccid']).to eq 89_860_117_851_087_152_093
     expect(parsed_response['csq_rssi']).to eq 16
     expect(parsed_response['csq_ber']).to eq 99
     expect(parsed_response['external_power_supply']).to eq 1

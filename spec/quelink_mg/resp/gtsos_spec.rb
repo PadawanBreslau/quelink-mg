@@ -18,7 +18,7 @@ RSpec.describe QuelinkMg::Resp::Gtsos do
     expect(parsed_response['longitude']).to eq 114.015807
     expect(parsed_response['latitude']).to eq 22.53724
     expect(parsed_response['gps_utc_time']).to eq Time.zone.strptime('20230806074855',
-                                                                              QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+                                                                     QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
     expect(parsed_response['mcc']).to eq 460
     expect(parsed_response['mnc']).to eq 0
     expect(parsed_response['lac']).to eq '27BD'

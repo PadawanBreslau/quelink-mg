@@ -17,7 +17,7 @@ RSpec.describe QuelinkMg::At::Gtcmd do
   end
 
   it 'raises error on missing params' do
-    expect { described_class.new(params: {}).message }.to raise_error(InvalidATGTException)
+    expect { described_class.new(params: {}).message }.to raise_error(InvalidATGTCMDException)
   end
 
   it 'raises error on improper params' do
@@ -30,6 +30,6 @@ RSpec.describe QuelinkMg::At::Gtcmd do
         serial_number: 'FFFF'
       }
 
-    expect { described_class.new(params:).message }.to raise_error(InvalidATGTException)
+    expect { described_class.new(params:).message }.to raise_error(InvalidATGTCMDException)
   end
 end

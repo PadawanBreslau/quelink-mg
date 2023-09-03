@@ -5,7 +5,7 @@ module QuelinkMg
     class Gtgsv < Base
       GTGSV_RESP_KEYS_PREFIX = %w[protocol_version unique_id device_name sv_count].freeze
       GTGSV_RESP_KEYS_SUFFIX = %w[send_time count_number].freeze
-  
+
       def hash
         all_params = @response.split(',')
 

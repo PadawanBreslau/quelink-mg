@@ -27,7 +27,7 @@ module QuelinkMg
           manual_netreg: (0..1)
         }
 
-        verify_params(acceptable_values, InvalidATGTException)
+        verify_params(acceptable_values, InvalidATGTBSIException)
       end
     end
   end
