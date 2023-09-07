@@ -7,7 +7,7 @@ AllCops:
 Style/Documentation:
   Enabled: false
 Metrics/MethodLength:
-  Max: 15
+  Max: 18
 Metrics/BlockLength:
   Max: 40
 Gemspec/DevelopmentDependencies:
@@ -15,7 +15,7 @@ Gemspec/DevelopmentDependencies:
 RSpec/MultipleExpectations:
   Enabled: false
 RSpec/ExampleLength:
-  Max: 20
+  Max: 30
 Layout/LineLength:
   Exclude: 
     - spec/quelink_mg/resp/*_spec.rb

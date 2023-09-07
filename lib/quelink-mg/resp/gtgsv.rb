@@ -17,7 +17,7 @@ module QuelinkMg
           sv_arr << "sv_power_#{i}"
         end
 
-        keys = GTGSV_RESP_KEYS_PREFIX + sv_arr + GTGSV_RESP_KEYS_SUFFIX
+        keys = [GTGSV_RESP_KEYS_PREFIX, sv_arr, GTGSV_RESP_KEYS_SUFFIX].inject(:+)
 
         unify_keys(keys.zip(all_params).to_h)
       end

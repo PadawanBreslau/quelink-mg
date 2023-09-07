@@ -1,0 +1,30 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ master, staging ]
+  pull_request:
+    branches: [ master, staging ]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Europe/Warsaw"
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+      - name: Install dependencies
+        run: bundle install
+        env:
+          RAILS_ENV: test
+      - name: Run tests
+        run: bundle exec rspec
+        env:
+          RAILS_ENV: test
+      - name: Rubocop
+        run: rubocop
