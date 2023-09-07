@@ -22,9 +22,9 @@ module QuelinkMg
       def validate_values
         acceptable_values = {
           network_mode: (0..3),
-          lte_mode: (0..3),
+          lte_mode: (0..5),
           apn_authentication_methods: (0..3),
-          manual_netreg: (0..5)
+          manual_netreg: (0..1)
         }
 
         verify_params(acceptable_values, InvalidATGTBSIException)
