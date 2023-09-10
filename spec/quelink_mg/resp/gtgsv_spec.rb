@@ -11,8 +11,7 @@ RSpec.describe QuelinkMg::Resp::Gtgsv do
     expect(parsed_response['sv_count']).to eq 11
     expect(parsed_response['sv_id_3']).to eq 5
     expect(parsed_response['sv_power_3']).to eq 22
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230806094936',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230806094936') }.in_time_zone
     expect(parsed_response['count_number']).to eq '3E2C$'
   end
 end

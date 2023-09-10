@@ -17,16 +17,14 @@ RSpec.describe QuelinkMg::Resp::Gtsos do
     expect(parsed_response['altitude']).to eq 116.7
     expect(parsed_response['longitude']).to eq 114.015807
     expect(parsed_response['latitude']).to eq 22.53724
-    expect(parsed_response['gps_utc_time']).to eq Time.zone.strptime('20230806074855',
-                                                                     QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['gps_utc_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230806074855') }.in_time_zone
     expect(parsed_response['mcc']).to eq 460
     expect(parsed_response['mnc']).to eq 0
     expect(parsed_response['lac']).to eq '27BD'
     expect(parsed_response['cel_id']).to eq '0DFC'
     expect(parsed_response['odo_mileage']).to eq ''
     expect(parsed_response['battery_percentage']).to eq 100
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230806074855',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230806074855') }.in_time_zone
     expect(parsed_response['count_number']).to eq '00F8$'
   end
 end

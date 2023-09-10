@@ -11,8 +11,7 @@ RSpec.describe QuelinkMg::Resp::Gtupc do
     expect(parsed_response['command_id']).to eq 0
     expect(parsed_response['result']).to eq 100
     expect(parsed_response['download_url']).to eq 'https://www.example.com/UPC_1.ini'
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230811142238',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230811142238') }.in_time_zone
     expect(parsed_response['count_number']).to eq '0155$'
   end
 end

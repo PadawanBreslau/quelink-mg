@@ -28,7 +28,7 @@ module QuelinkMg
       end
 
       def transform_with_timezone(value)
-        QuelinkMg.configuration.time_zone.strptime(value, QUELINK_DATE_FORMAT)
+        Time.use_zone('UTC') { Time.zone.parse(value) }.in_time_zone
       end
 
       def unify_keys(hash)

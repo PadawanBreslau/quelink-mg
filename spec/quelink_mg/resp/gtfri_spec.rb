@@ -8,10 +8,8 @@ RSpec.describe QuelinkMg::Resp::Gtfri do
 
     parsed_response = described_class.new(response:).hash
     expect(parsed_response).not_to eq({})
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230813061231',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
-    expect(parsed_response['gps_utc_time']).to eq Time.zone.strptime('20230813061232',
-                                                                     QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230813061231') }.in_time_zone
+    expect(parsed_response['gps_utc_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230813061232') }.in_time_zone
     expect(parsed_response['longitude']).to eq 21.012847
     expect(parsed_response['latitude']).to eq 52.200338
     expect(parsed_response['unique_id']).to eq 860_201_061_504_521

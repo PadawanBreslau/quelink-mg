@@ -18,12 +18,10 @@ RSpec.describe QuelinkMg::Resp::Gtinf do
     expect(parsed_response['charging']).to eq 1
     expect(parsed_response['led_on']).to eq 1
     expect(parsed_response['gps_on_need']).to eq 0
-    expect(parsed_response['last_gps_fix_utc_time']).to eq Time.zone.strptime('20230811034659',
-                                                                              QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['last_gps_fix_utc_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230811034659') }.in_time_zone
     expect(parsed_response['battery_percentage']).to eq 100
     expect(parsed_response['temperature']).to eq 36.7
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230811114700',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230811114700') }.in_time_zone
     expect(parsed_response['count_number']).to eq '00A0$'
   end
 end

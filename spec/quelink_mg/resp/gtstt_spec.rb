@@ -15,15 +15,13 @@ RSpec.describe QuelinkMg::Resp::Gtstt do
     expect(parsed_response['altitude']).to eq 212.0
     expect(parsed_response['last_longitude']).to eq 114.016205
     expect(parsed_response['last_latitude']).to eq 22.539455
-    expect(parsed_response['gps_utc_time']).to eq Time.zone.strptime('20230811055755',
-                                                                     QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['gps_utc_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230811055755') }.in_time_zone
     expect(parsed_response['mcc']).to eq 460
     expect(parsed_response['mnc']).to eq 1
     expect(parsed_response['lac']).to eq '253D'
     expect(parsed_response['cell_id']).to eq 'AEC3'
     expect(parsed_response['odo_mileage']).to eq 0.2
-    expect(parsed_response['send_time']).to eq Time.zone.strptime('20230811135756',
-                                                                  QuelinkMg::Resp::Base::QUELINK_DATE_FORMAT)
+    expect(parsed_response['send_time']).to eq Time.use_zone('UTC') { Time.zone.parse('20230811135756') }.in_time_zone
     expect(parsed_response['count_number']).to eq '012E$'
   end
 end
