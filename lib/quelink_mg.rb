@@ -34,6 +34,9 @@ require File.expand_path('quelink-mg/ack/gtrto.rb', __dir__)
 require File.expand_path('quelink-mg/ack/gtsri.rb', __dir__)
 require File.expand_path('quelink-mg/ack/gtudf.rb', __dir__)
 
+require File.expand_path('quelink-mg/buff/base.rb', __dir__)
+require File.expand_path('quelink-mg/buff/gtfri.rb', __dir__)
+
 require File.expand_path('quelink-mg/configuration.rb', __dir__)
 
 module QuelinkMg
