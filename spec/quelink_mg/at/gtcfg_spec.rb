@@ -34,6 +34,16 @@ RSpec.describe QuelinkMg::At::Gtcfg do
                                                        '300,2,0,20491231235959,0,0000,0,10,,,FFFF$'
   end
 
+  it 'creates message if some params available' do
+    params =
+      {
+        password: 'gl310m',
+        gps_on_need: 1,
+        serial_number: 'FFFF'
+      }
+    expect(described_class.new(params:).message).to eq 'AT+GTCFG=gl310m,,,,,1,,,,,,,,,,,,,,,,,,,FFFF$'
+  end
+
   it 'raises error on missing params' do
     expect { described_class.new(params: {}).message }.to raise_error(InvalidATGTCFGException)
   end

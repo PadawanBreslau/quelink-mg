@@ -19,11 +19,21 @@ module QuelinkMg
       private
 
       def verify_params(acceptable_values, error)
+        required_values.each do |rv|
+          raise_error(rv, error) if @params.fetch(rv, nil).nil?
+        end
+
         acceptable_values.each do |k, v|
-          next if v.include?(@params.fetch(k, nil))
+          value = @params.fetch(k, nil)
+
+          next if value.blank? || v.include?(value)
 
           raise_error(k, error)
         end
+      end
+
+      def required_values
+        %i[password serial_number]
       end
 
       def raise_error(type, error)
