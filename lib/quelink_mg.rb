@@ -15,6 +15,7 @@ require File.expand_path('quelink-mg/at/gtqss.rb', __dir__)
 require File.expand_path('quelink-mg/at/gtrto.rb', __dir__)
 require File.expand_path('quelink-mg/at/gtsri.rb', __dir__)
 require File.expand_path('quelink-mg/at/gtudf.rb', __dir__)
+require File.expand_path('quelink-mg/at/gtupd.rb', __dir__)
 
 require File.expand_path('quelink-mg/resp/base.rb', __dir__)
 require File.expand_path('quelink-mg/resp/gtfri.rb', __dir__)

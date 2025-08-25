@@ -8,6 +8,7 @@ class InvalidATGTQSSException < StandardError; end
 class InvalidATGTRTOException < StandardError; end
 class InvalidATGTSRIException < StandardError; end
 class InvalidATGTUDFException < StandardError; end
+class InvalidATGTUPDException < StandardError; end
 
 module QuelinkMg
   module At
