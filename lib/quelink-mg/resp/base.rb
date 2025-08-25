@@ -22,7 +22,7 @@ module QuelinkMg
       def date?(value)
         date = DateTime.strptime(value, QUELINK_DATE_FORMAT)
 
-        !date.nil? && (date - DateTime.now).abs < 3 * 365
+        !date.nil? && (date - DateTime.now).abs < 25 * 365
       rescue Date::Error
         false
       end
@@ -31,13 +31,13 @@ module QuelinkMg
         Time.use_zone('UTC') { Time.zone.parse(value) }.in_time_zone
       end
 
-      def unify_keys(hash)
+      def unify_keys(hash, skip_number_change=false)
         hash.transform_values do |v|
           if date?(v)
             transform_with_timezone(v)
-          elsif integer?(v)
+          elsif integer?(v) && !skip_number_change
             v.to_i
-          elsif float?(v)
+          elsif float?(v) && !skip_number_change
             v.to_f
           else
             v

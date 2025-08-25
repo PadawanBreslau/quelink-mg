@@ -26,7 +26,7 @@ module QuelinkMg
         acceptable_values.each do |k, v|
           value = @params.fetch(k, nil)
 
-          next if value.blank? || v.include?(value)
+          next if value.nil? || value == '' || v.include?(value)
 
           raise_error(k, error)
         end

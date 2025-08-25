@@ -22,7 +22,7 @@ module QuelinkMg
       def date?(value)
         date = DateTime.strptime(value, QUELINK_DATE_FORMAT)
 
-        !date.nil? && (date - DateTime.now).abs < 3 * 365
+        !date.nil? && (date - DateTime.now).abs < 25 * 365
       rescue Date::Error
         false
       end

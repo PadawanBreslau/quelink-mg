@@ -25,7 +25,7 @@ module QuelinkMg
           mode: (0..5),
           discard_no_fix: (0..1),
           check_interval: (1..86_400),
-          send_interval: (5..86_400),
+          send_interval: (1..86_400),
           ignition_check_interval: (5..86_400),
           ignition_send_interval: (5..86_400),
           distance: (50..65_535),
