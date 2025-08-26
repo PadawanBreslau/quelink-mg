@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    quelink-mg (0.3.0)
-      activesupport (~> 7.0)
+    quelink-mg (0.6.0)
+      activesupport
 
 GEM
   remote: https://rubygems.org/

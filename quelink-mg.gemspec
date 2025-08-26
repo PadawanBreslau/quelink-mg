@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'quelink-mg'
-  s.version     = '0.6.0'
+  s.version     = '0.6.1'
   s.summary     = 'Quelink devices command reader and writer'
   s.description = 'Quelink devices command reader and writer'
   s.authors     = ['Stanislaw Zawadzki']
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.license       = 'MIT'
   s.required_ruby_version = '>= 3.1'
-  s.add_dependency 'activesupport', '~> 7.0'
+  s.add_dependency 'activesupport'
   s.add_development_dependency 'pry', '~> 0.13'
   s.add_development_dependency 'rspec', '~> 3.9'
   s.add_development_dependency 'rubocop', '~> 1.0'
